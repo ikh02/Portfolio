@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Ibrahim Harmoush</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="tsparticles"></div>
+
+    <header>
+        <a href="/" class="logo">Ibrahim Harmoush</a>
+        <nav>
+            <a href="/">Home</a> <!-- CHANGED -->
+            <a href="/resume">Résumé</a> <!-- CHANGED -->
+            <a href="/about">About</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-section">
+            <div class="about-hero">
+                <h1>About Me</h1>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>A problem-solver at the intersection of software and artificial intelligence.</h3>
+                    <p>
+                        I am a Computer and Communications Engineering graduate from the American University of Beirut with a deep-seated passion for technology.  My journey was fueled by a deep-seated passion, not just for technology in general, but for the art of software and the frontier of Artificial Intelligence.
+                    </p>
+                    <p>
+                        My experience includes an AI and Software Engineering internship at InMobiles Holding, where I developed an AI-powered attendance system from data preparation to model implementation. My journey includes programming with Python, C++, Java, and SQL. I also have hands-on experience in IT support at the American University of Beirut.
+                    </p>
+                </div>
+                <div class="contact-details">
+                    <h3>Contact & Links</h3>
+                    <ul>
+                        <li>
+                            <strong>Email</strong>
+                            <a href="mailto:ikh02@mail.aub.edu">ikh02@mail.aub.edu</a>
+                        </li>
+                        <li>
+                            <strong>Phone</strong>
+                            <span>+961 3 102 663</span>
+                        </li>
+                        <li>
+                            <strong>Location</strong>
+                            <span>Beirut, Lebanon</span>
+                        </li>
+                        <li>
+                            <strong>Links</strong>
+                            <a href="https://www.linkedin.com/in/ibrahim-harmoush-758939281/" target="_blank">LinkedIn</a> / 
+                            <a href="https://github.com/ikh02" target="_blank">GitHub</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Ibrahim Harmoush. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/particles-config.js') }}"></script>
+</body>
+</html>

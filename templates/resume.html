@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résumé - Ibrahim Harmoush</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="tsparticles"></div>
+
+    <header>
+        <a href="/" class="logo">Ibrahim Harmoush</a>
+        <nav>
+            <a href="/">Home</a> <!-- CHANGED -->
+            <a href="/resume">Résumé</a>
+            <a href="/about">About</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="resume-section">
+            <div class="resume-header">
+                <h1>My Résumé</h1>
+                <a href="{{ url_for('static', filename='Ibrahim_Harmoush_Resume.pdf') }}" download class="resume-download-btn">Download PDF</a>
+            </div>
+            <!-- Education Section -->
+            <div class="resume-category">
+                <h2>Education</h2>
+                <div class="resume-item">
+                     <div class="item-header">
+                        <h3>Bachelor of Engineering in Computer and Communications</h3>
+                        <span>Aug 2021 – 2025 </span>
+                    </div>
+                    <h4>American University of Beirut, Beirut, Lebanon</h4>
+                </div>
+            </div>
+            
+            <!-- Experience Section -->
+            <div class="resume-category">
+                <h2>Experience</h2>
+                <div class="resume-item">
+                    <div class="item-header">
+                        <h3>AI and Software Engineering Intern</h3>
+                        <span>May 2024 – Aug 2024</span>
+                    </div>
+                    <h4>InMobiles Holding, Beirut, Lebanon</h4>
+                    <p>Worked on developing an AI-powered attendance system using CCTV surveillance. Prepared training data, evaluated face recognition models, and implemented a process to convert faces into vector embeddings for identification.</p>
+                </div>
+                <div class="resume-item">
+                    <div class="item-header">
+                        <h3>IT Support Assistant</h3>
+                        <span>Feb 2022 – May 2025</span>
+                    </div>
+                    <h4>Work Study Program at AUB, Beirut, Lebanon</h4>
+                    <p>Managed ticketing systems (TeamDynamix), categorized assets, and provided technical support for students and professors via Cisco Calling Center. Maintained IT inventories by replacing and fixing hardware.</p>
+                </div>
+            </div>
+
+            
+
+            <!-- Skills Section -->
+            <div class="resume-category">
+                <h2>Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-group">
+                        <h4>Programming Languages</h4>
+                        <ul>
+                            <li>Python</li>
+                            <li>C++</li>
+                            <li>Java</li>
+                            <li>SQL</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Software & Tools</h4>
+                        <ul>
+                            <li>Google Colab</li>
+                            <li>Flask</li>
+                            <li>SQLAlchemy</li>
+                            <li>Git & GitHub</li>
+                        </ul>
+                    </div>
+                     <div class="skill-group">
+                        <h4>Expertise</h4>
+                        <ul>
+                            <li>Backend Programming</li>
+                            <li>AI / Machine Learning</li>
+                            <li>Web Development</li>
+                            <li>Android App Development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Ibrahim Harmoush. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/particles-config.js') }}"></script>
+</body>
+</html>

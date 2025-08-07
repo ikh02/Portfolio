@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ibrahim Harmoush - Software & AI Engineer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="tsparticles"></div>
+
+    <header>
+        <div class="logo">Ibrahim Harmoush</div>
+        <nav>
+            <a href="/">Home</a> <!-- CHANGED -->
+            <a href="/resume">Résumé</a> <!-- CHANGED -->
+            <a href="/about">About</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1 class="hero-text-top">SOFTWARE & AI</h1>
+            <h1 class="hero-text-bottom">ENGINEER</h1>
+            <div class="hero-intro">
+                <p>Hello, I'm Ibrahim Harmoush. I design and build intelligent solutions, from dynamic web applications with Python and Flask to AI-powered systems that solve real-world problems.</p>
+                <a href="#work" class="cta-link">See my work</a>
+            </div>
+        </section>
+
+       <!-- In templates/index.html -->
+
+<section id="work" class="projects-section">
+    <h2>Featured Projects</h2>
+    <!-- START of updated grid -->
+    <section id="work" class="projects-section">
+    <h2>Featured Projects</h2>
+    <!-- START of new dynamic grid -->
+    <div class="projects-grid">
+        {% for slug, project in projects.items() %}
+        <a href="/project/{{ slug }}" class="project-card-link">
+            <div class="project-card">
+                <div class="project-image">
+                    <!-- This is where the thumbnail is displayed -->
+                    <img src="{{ url_for('static', filename='images/' + project.thumbnail) }}" alt="Thumbnail for {{ project.title }}">
+                </div>
+                <h3>{{ project.title }}</h3>
+                <!-- You can decide if you still want the short description here or not -->
+                <p>{{ project.full_description.split('.')[0] + '.' }}</p> <!-- Shows the first sentence -->
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+    <!-- END of new dynamic grid -->
+</section>
+
+        <!-- Code Stream Section -->
+        <section class="code-stream-section">
+            <div class="code-stream">
+                <span>Initializing Neural Network...</span>
+                <span>Compiling model with Adam optimizer...</span>
+                <span>Loss function: CategoricalCrossentropy</span>
+                <span>Training sequence initiated... [OK]</span>
+                <span>// System Ready</span>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2025 Ibrahim Harmoush. All Rights Reserved.</p>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/particles-config.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

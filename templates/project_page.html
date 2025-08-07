@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- The title will change based on the project -->
+    <title>{{ project.title }} - Ibrahim Harmoush</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="tsparticles"></div>
+
+    <header>
+        <a href="/" class="logo">Ibrahim Harmoush</a>
+        <nav>
+            <a href="/">Home Page</a>
+            <a href="/resume">Résumé</a>
+            <a href="/about">About</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="project-page-section">
+            <!-- Project Title -->
+            <h1 class="project-title">{{ project.title }}</h1>
+            
+            <!-- Project Description -->
+            <p class="project-long-description">{{ project.full_description }}</p>
+
+            <!-- Image Gallery -->
+            <div class="project-gallery">
+                {% for image_filename in project.images %}
+                    <img src="{{ url_for('static', filename='images/' + image_filename) }}" alt="Image of {{ project.title }}">
+                {% else %}
+                    <p>More images coming soon.</p>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Ibrahim Harmoush. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/particles-config.js') }}"></script>
+</body>
+</html>
