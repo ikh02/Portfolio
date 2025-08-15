@@ -535,3 +535,27 @@ footer {
         font-size: 2.5rem;
     }
 }
+
+
+/* --- Responsive Header Styles --- */
+@media (max-width: 768px) {
+    header {
+        /* On mobile, turn the header into a vertical stack */
+        flex-direction: column;
+        align-items: center; /* Center-align the items */
+        gap: 1.5rem; /* Add vertical space between the logo and the nav links */
+        padding: 2rem; /* Adjust padding for smaller screens */
+        position: relative; /* Change from absolute to allow page content to flow naturally below it */
+    }
+
+    nav {
+        /* Ensure nav links have space between them if they wrap */
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    /* We need to adjust the first section's top padding to account for the new header layout */
+    .hero {
+        padding-top: 2rem;
+    }
+}

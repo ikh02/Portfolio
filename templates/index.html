@@ -15,9 +15,9 @@
     <header>
         <div class="logo">Ibrahim Harmoush</div>
         <nav>
-            <a href="/">Home</a> <!-- CHANGED -->
-            <a href="/resume">Résumé</a> <!-- CHANGED -->
-            <a href="/about">About</a>
+            <a href="/">Home</a>
+            <a href="/resume">Résumé</a>
+            <a href="/about">About Me</a>
         </nav>
     </header>
 
@@ -32,31 +32,26 @@
             </div>
         </section>
 
-       <!-- In templates/index.html -->
-
-<section id="work" class="projects-section">
-    <h2>Featured Projects</h2>
-    <!-- START of updated grid -->
-    <section id="work" class="projects-section">
-    <h2>Featured Projects</h2>
-    <!-- START of new dynamic grid -->
-    <div class="projects-grid">
-        {% for slug, project in projects.items() %}
-        <a href="/project/{{ slug }}" class="project-card-link">
-            <div class="project-card">
-                <div class="project-image">
-                    <!-- This is where the thumbnail is displayed -->
-                    <img src="{{ url_for('static', filename='images/' + project.thumbnail) }}" alt="Thumbnail for {{ project.title }}">
-                </div>
-                <h3>{{ project.title }}</h3>
-                <!-- You can decide if you still want the short description here or not -->
-                <p>{{ project.full_description.split('.')[0] + '.' }}</p> <!-- Shows the first sentence -->
+       <!-- === START OF CORRECTED PROJECTS SECTION === -->
+       <section id="work" class="projects-section">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                {% for slug, project in projects.items() %}
+                <a href="/project/{{ slug }}" class="project-card-link">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <!-- This is where the thumbnail is displayed -->
+                            <img src="{{ url_for('static', filename='images/' + project.thumbnail) }}" alt="Thumbnail for {{ project.title }}">
+                        </div>
+                        <h3>{{ project.title }}</h3>
+                        <!-- You can decide if you still want the short description here or not -->
+                        <p>{{ project.full_description.split('.')[0] + '.' }}</p> <!-- Shows the first sentence -->
+                    </div>
+                </a>
+                {% endfor %}
             </div>
-        </a>
-        {% endfor %}
-    </div>
-    <!-- END of new dynamic grid -->
-</section>
+        </section>
+        <!-- === END OF CORRECTED PROJECTS SECTION === -->
 
         <!-- Code Stream Section -->
         <section class="code-stream-section">
