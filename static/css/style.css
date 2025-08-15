@@ -101,8 +101,6 @@ header nav a {
     padding: 6rem 4rem;
 }
 
-/* --- This is the NEW and IMPROVED project grid layout --- */
-
 /* Base style for mobile (single column) */
 .projects-grid {
     display: grid;
@@ -142,7 +140,7 @@ header nav a {
 
 .project-image {
     width: 100%;
-    aspect-ratio: 1 / 1; 
+    aspect-ratio: 1 / 1;
     margin-bottom: 1rem;
     overflow: hidden; /* Hides parts of the image that don't fit */
     background-color: #111; /* Fallback color */
@@ -172,27 +170,7 @@ header nav a {
     transform: scale(1.03); /* Nice hover effect */
 }
 
-/* --- Interactive Constellation Section Styles --- 
-.interactive-canvas-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 6rem 2rem;  A bit less padding than the clock needed 
-    height: 400px;  Give it a fixed height 
-}
-
-#constellation-canvas {
-    width: 100%;
-    max-width: 800px;  Limit the max width on large screens 
-    height: 100%;
-    cursor: none;  Hide the default cursor to let our animation lead 
-    display: block;  Important for canvas to prevent extra space 
-}
- --- Footer --- */
-
-
-
- 
+/* --- Footer --- */
 footer {
     text-align: center;
     padding: 2rem 4rem;
@@ -221,7 +199,7 @@ footer {
 .about-hero h1 {
     font-size: 8vw;
     font-weight: 900;
-    line-height: 1;
+    line-height: 1.1; /* Adjusted for better multi-line spacing */
     text-transform: uppercase;
     margin-bottom: 4rem;
     animation: fadeIn 1s ease-out forwards;
@@ -453,12 +431,12 @@ footer {
     overflow: hidden; /* Hide the text until it's "typed" */
     border-right: 2px solid rgba(255, 255, 255, 0.75); /* The blinking cursor */
     opacity: 0; /* Start as invisible */
-    
+
     /* Attach the animation */
-    animation: typing 3.5s steps(40, end), 
+    animation: typing 3.5s steps(40, end),
                blink-caret .75s step-end infinite,
                fadeInOut 8s linear forwards;
-    
+
     /* Make each line appear after the previous one */
     animation-iteration-count: infinite;
 }
@@ -537,25 +515,46 @@ footer {
 }
 
 
-/* --- Responsive Header Styles --- */
+/* --- NEW MEDIA QUERY FOR MOBILE LAYOUT FIXES --- */
 @media (max-width: 768px) {
+    /* Header layout changes */
     header {
-        /* On mobile, turn the header into a vertical stack */
         flex-direction: column;
-        align-items: center; /* Center-align the items */
-        gap: 1.5rem; /* Add vertical space between the logo and the nav links */
-        padding: 2rem; /* Adjust padding for smaller screens */
-        position: relative; /* Change from absolute to allow page content to flow naturally below it */
+        align-items: center;
+        gap: 1.5rem;
+        padding: 2rem;
+        position: relative; /* Change from absolute for better mobile flow */
     }
 
     nav {
-        /* Ensure nav links have space between them if they wrap */
         display: flex;
         gap: 1.5rem;
     }
 
-    /* We need to adjust the first section's top padding to account for the new header layout */
+    /* Hero section adjustments */
     .hero {
-        padding-top: 2rem;
+        padding: 2rem;
+        height: auto;
+        min-height: 80vh;
+        justify-content: center;
+        /* The hero section should now flow naturally */
+    }
+
+    /* Center the hero title on mobile */
+    .hero-text-top, .hero-text-bottom {
+        text-align: center;
+    }
+
+    /* Hero intro paragraph adjustments (already added in a previous turn) */
+    .hero-intro {
+        position: static;
+        text-align: center;
+        max-width: 90%;
+        margin: 2rem auto 0;
+        opacity: 1;
+        animation: none;
+    }
+    .cta-link {
+        display: inline-block;
     }
 }
