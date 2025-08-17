@@ -7,7 +7,7 @@ PROJECTS = {
     'car-dealership': {
         'title': 'FYP Car Dealership Website (Python Flask)',
         'thumbnail': 'FYP.png',  # <-- NEW
-        'full_description': 'Our final year project is a fully functional, interactive web portal designed for a car dealership. It was built using the Python Flask framework for the backend logic and routing. For data persistence, it utilizes SQLAlchemy to manage a database of vehicle inventory, customer inquiries, and sales records. The application has an AI intergrated chatbot that interprets the scraped data in order to support the client and the suggest the most compatible product.',
+        'full_description': 'Our final year project is a fully functional, interactive web portal designed for a car dealership. It was built using the Python Flask framework for the backend logic and routing. For data persistence, it utilizes SQLAlchemy to manage a database of vehicle inventory, customer inquiries, and sales records. The application has an AI intergrated chatbot that interprets the scraped data in order to support the client and suggest the most compatible product.',
         'images': ['FYP2.png', 'FYP1.png'] # TODO: Replace with your actual image filenames
     },
     'currency-exchange-app': {
